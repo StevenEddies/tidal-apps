@@ -1,0 +1,3 @@
+include 'tidal-app-plugin'
+
+include 'flags'

@@ -1,0 +1,11 @@
+// Avoiding plugins block to allow ../buildSrc/build.gradle to apply this file
+apply plugin: 'java-gradle-plugin'
+
+gradlePlugin {
+    plugins {
+        tidalApp {
+            id = 'uk.me.eddies.gradleplugins.tidal-app'
+            implementationClass = 'uk.me.eddies.gradleplugins.tidalapp.TidalAppPlugin'
+        }
+    }
+}

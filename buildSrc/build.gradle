@@ -1,12 +1,11 @@
-plugins {
-    id 'groovy-gradle-plugin'
-}
+// This file allows us to apply the plugin in this build too
 
-gradlePlugin {
-    plugins {
-        simplePlugin {
-            id = 'org.example.greeting'
-            implementationClass = 'org.example.GreetingPlugin'
+apply from: '../tidal-app-plugin/build.gradle'
+
+sourceSets {
+    main {
+        java {
+            srcDir '../tidal-app-plugin/src/main/java'
         }
     }
 }
