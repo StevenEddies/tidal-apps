@@ -6,8 +6,10 @@ import org.gradle.api.Project;
 public class TidalAppPlugin implements Plugin<Project> {
 
 	@Override
-	public void apply(Project arg0) {
-		// TODO Auto-generated method stub
-		
+	public void apply(Project project) {
+		var testConnectionTask = project.getTasks().register("testBadgeConnection", SerialConnectionTestTask.class, task -> {
+			task.setGroup("Deployment");
+			task.setDescription("Checks that a connection can be established to the TiDAL badge, for test deployment.");
+		});
 	}
 }
